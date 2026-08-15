@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cdcykknrrf5c0" path="res://scenes/characters/player.tscn" id="4_k0juu"]
 
 [node name="World" type="Node2D" unique_id=1273119928]
+y_sort_enabled = true
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=973333052]
 
@@ -27,3 +28,11 @@ centered = false
 
 [node name="Player" parent="." unique_id=879001438 instance=ExtResource("4_k0juu")]
 position = Vector2(167, 111)
+control_scheme = 1
+
+[node name="Player2" parent="." unique_id=1520859856 instance=ExtResource("4_k0juu")]
+position = Vector2(198, 160)
+control_scheme = 2
+
+[node name="Player3" parent="." unique_id=540786865 instance=ExtResource("4_k0juu")]
+position = Vector2(219, 107)
