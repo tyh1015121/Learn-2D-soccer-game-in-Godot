@@ -105,6 +105,7 @@ height = 18.0
 
 [node name="Player" type="CharacterBody2D" unique_id=879001438]
 y_sort_enabled = true
+collision_layer = 2
 script = ExtResource("1_yewv4")
 speed = 80.0
 
