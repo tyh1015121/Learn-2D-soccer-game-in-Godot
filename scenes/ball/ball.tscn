@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/path = NodePath("../BallSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +30,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/path = NodePath("../BallSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,7 +48,7 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/path = NodePath("../BallSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -70,9 +70,10 @@ radius = 4.0
 
 [node name="Ball" type="AnimatableBody2D" unique_id=2102733156]
 collision_layer = 4
+sync_to_physics = false
 script = ExtResource("1_stoaj")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=513886371]
+[node name="BallSprite" type="Sprite2D" parent="." unique_id=513886371]
 texture = ExtResource("1_oqv3d")
 centered = false
 offset = Vector2(-5, -10)
