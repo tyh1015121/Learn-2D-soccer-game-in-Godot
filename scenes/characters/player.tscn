@@ -160,7 +160,7 @@ height = 18.0
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_yewv4")
-power = 70.0
+power = 150.0
 speed = 80.0
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=288743150]

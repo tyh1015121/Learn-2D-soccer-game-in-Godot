@@ -11,7 +11,6 @@ var carrier : Player = null
 var player_detection_area : Area2D = null
 var sprite : Sprite2D = null
 
-
 func setup(context_ball:Ball, context_player_detection_area: Area2D,context_carrier:Player,context_animation_player:AnimationPlayer, context_sprite: Sprite2D) -> void:
 	ball = context_ball
 	player_detection_area = context_player_detection_area
@@ -38,3 +37,9 @@ func process_gravity(delta: float,bounciness: float = 0.0) -> void:
 			if bounciness > 0 and ball.height_velocity < 0:
 				ball.height_velocity = -ball.height_velocity * bounciness
 				ball.velocity *= bounciness
+
+func move_and_bounce(delta:float) -> void:
+	var collision := ball.move_and_collide(ball.velocity*delta)
+	if collision != null:
+		ball.velocity = ball.velocity.bounce(collision.get_normal()) * ball.BOUNCINESS
+		ball.switch_state(Ball.State.FREEFORM)

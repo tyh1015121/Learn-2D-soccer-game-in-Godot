@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cv4n0o2f54jf6" path="res://assets/art/backgrounds/pitch-lines.png" id="3_71j4m"]
 [ext_resource type="PackedScene" uid="uid://cdcykknrrf5c0" path="res://scenes/characters/player.tscn" id="4_k0juu"]
 [ext_resource type="PackedScene" uid="uid://duc7fboo8raui" path="res://scenes/ball/ball.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://b346jc4wpw1fq" path="res://scenes/goal/goal.tscn" id="5_i7141"]
 
 [node name="World" type="Node2D" unique_id=1273119928]
 y_sort_enabled = true
@@ -17,7 +18,7 @@ limit_right = 850
 limit_bottom = 360
 position_smoothing_enabled = true
 script = ExtResource("1_qfnet")
-ball = NodePath("../Node2D/Ball")
+ball = NodePath("../ActorContainer/Ball")
 
 [node name="Backgrounds" type="Node2D" parent="." unique_id=973333052]
 
@@ -37,22 +38,32 @@ position = Vector2(1, 0)
 texture = ExtResource("3_71j4m")
 centered = false
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1410812149]
+[node name="ActorContainer" type="Node2D" parent="." unique_id=1410812149]
 y_sort_enabled = true
 
-[node name="Player" parent="Node2D" unique_id=879001438 node_paths=PackedStringArray("ball") instance=ExtResource("4_k0juu")]
+[node name="PitchObjects" type="Node2D" parent="ActorContainer" unique_id=964215654]
+y_sort_enabled = true
+
+[node name="GoalHome" parent="ActorContainer/PitchObjects" unique_id=665527534 instance=ExtResource("5_i7141")]
+position = Vector2(33, 220)
+
+[node name="GoalAway" parent="ActorContainer/PitchObjects" unique_id=1902403431 instance=ExtResource("5_i7141")]
+position = Vector2(818, 220)
+scale = Vector2(-1, 1)
+
+[node name="Player" parent="ActorContainer" unique_id=879001438 node_paths=PackedStringArray("ball") instance=ExtResource("4_k0juu")]
 position = Vector2(194, 89)
 ball = NodePath("../Ball")
 control_scheme = 1
 
-[node name="Player2" parent="Node2D" unique_id=1520859856 node_paths=PackedStringArray("ball") instance=ExtResource("4_k0juu")]
+[node name="Player2" parent="ActorContainer" unique_id=1520859856 node_paths=PackedStringArray("ball") instance=ExtResource("4_k0juu")]
 position = Vector2(63, 82)
 ball = NodePath("../Ball")
 control_scheme = 2
 
-[node name="Player3" parent="Node2D" unique_id=540786865 node_paths=PackedStringArray("ball") instance=ExtResource("4_k0juu")]
+[node name="Player3" parent="ActorContainer" unique_id=540786865 node_paths=PackedStringArray("ball") instance=ExtResource("4_k0juu")]
 position = Vector2(88, 131)
 ball = NodePath("../Ball")
 
-[node name="Ball" parent="Node2D" unique_id=2102733156 instance=ExtResource("5_71j4m")]
+[node name="Ball" parent="ActorContainer" unique_id=2102733156 instance=ExtResource("5_71j4m")]
 position = Vector2(238, 128)
