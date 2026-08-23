@@ -117,7 +117,7 @@ ball = NodePath("../Ball")
 control_scheme = 2
 
 [node name="Player3" parent="ActorContainer" unique_id=540786865 node_paths=PackedStringArray("ball") instance=ExtResource("4_k0juu")]
-position = Vector2(181, 139)
+position = Vector2(670, 294)
 ball = NodePath("../Ball")
 
 [node name="Ball" parent="ActorContainer" unique_id=2102733156 instance=ExtResource("5_71j4m")]
