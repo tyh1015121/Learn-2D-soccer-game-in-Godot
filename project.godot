@@ -12,8 +12,8 @@ config_version=5
 
 config/name="New Game Project"
 run/main_scene="uid://coar0w52ewb50"
-run/max_fps=60
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
