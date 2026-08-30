@@ -51,7 +51,7 @@ ball = NodePath("Ball")
 goal_home = NodePath("PitchObjects/GoalHome")
 goal_away = NodePath("PitchObjects/GoalAway")
 team_home = "FRANCE"
-team_away = "CANADA"
+team_away = "SPAIN"
 
 [node name="Spwans" type="Node2D" parent="ActorContainer" unique_id=736502734]
 unique_name_in_owner = true
