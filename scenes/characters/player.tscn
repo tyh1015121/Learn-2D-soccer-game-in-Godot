@@ -18,6 +18,7 @@ shader_parameter/team_color = 4
 
 [sub_resource type="Animation" id="Animation_rp718"]
 length = 0.001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -95,6 +96,24 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [24, 25]
+}
+
+[sub_resource type="Animation" id="Animation_xhtjm"]
+resource_name = "hurt"
+length = 0.2
+loop_mode = 2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [54, 55]
 }
 
 [sub_resource type="Animation" id="Animation_yewv4"]
@@ -273,6 +292,7 @@ _data = {
 &"bicycle_kick": SubResource("Animation_eojnx"),
 &"chest_control": SubResource("Animation_2l4js"),
 &"header": SubResource("Animation_7vyk4"),
+&"hurt": SubResource("Animation_xhtjm"),
 &"idle": SubResource("Animation_yewv4"),
 &"kick": SubResource("Animation_6eyoc"),
 &"prep_kick": SubResource("Animation_kqtwu"),
@@ -290,6 +310,13 @@ height = 18.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atpat"]
 radius = 6.0
 height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyoc"]
+size = Vector2(7, 7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eyoc"]
+radius = 40.0
+height = 120.0
 
 [node name="Player" type="CharacterBody2D" unique_id=879001438]
 collision_layer = 2
@@ -349,3 +376,25 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BallDetectionArea" unique_id=589677698]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_atpat")
+
+[node name="TackleDamageEmitterArea" type="Area2D" parent="." unique_id=1421148407]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TackleDamageEmitterArea" unique_id=1066158098]
+position = Vector2(13, -3)
+shape = SubResource("RectangleShape2D_6eyoc")
+
+[node name="OpponentDetectionArea" type="Area2D" parent="." unique_id=1994608380]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpponentDetectionArea" unique_id=1404666049]
+position = Vector2(20, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6eyoc")
